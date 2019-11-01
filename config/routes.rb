@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   #put 'users/:id' => 'users#update'
   #delete 'users/:id' => 'users#destroy'
   resources :artwork_shares, only: [:create, :destroy]
+  resources :comments, only: [:index, :create, :destroy]
 end

@@ -6,6 +6,7 @@ class Artwork < ApplicationRecord
     belongs_to :artist, class_name: "User", foreign_key: :artist_id
     has_many :artwork_shares
     has_many :shared_viewers, through: :artwork_shares, source: :viewer
+    has_many :comments, dependent: :destroy
 
     def self.artworks_for_user_id(user_id)
         Artwork
